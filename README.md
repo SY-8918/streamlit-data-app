@@ -1,35 +1,63 @@
-# Streamlit Data App
+# Snowflake Secure Connection Project
 
-Interactive data application built with Streamlit to demonstrate data exploration, visualization, and lightweight analytics in a user-friendly web interface.
+Secure Python project demonstrating how to connect to Snowflake using RSA key authentication and insert data into a database.
 
-## Project Overview
+## Project Objective
 
-This project showcases how Streamlit can be used to rapidly build interactive Python-based data applications for exploration and reporting.
+This project reproduces a real-world secure connection workflow between a Python client and Snowflake.
+
+Main goals:
+
+* authenticate with RSA private/public keys
+* connect to Snowflake without a password
+* create a database and table
+* insert and visualize data
 
 ## Technologies
 
 * Python
-* Streamlit
-* Pandas
-* Data Visualization
-* Interactive Dashboard
+* Snowflake
+* RSA Authentication
+* snowflake-connector-python
+* cryptography
 
-## Features
+## Architecture
 
-* Interactive data interface
-* Real-time filtering and display
-* Lightweight dashboard structure
-* Simple analytical workflow
+Python Client → RSA Private Key → Snowflake → Warehouse → Database → Table
 
-## Files
+The private key remains on the client side, while the public key is stored in Snowflake.
 
-* `stream.py`
-* `ventes.csv`
+## Security
 
-## Objective
+This project uses RSA 2048-bit authentication with a PKCS#8 private key.
 
-Demonstrate practical skills in building interactive data apps and presenting analytical results through a simple web interface.
+Example Snowflake configuration:
 
-## Business Value
+```sql
+ALTER USER ZEBRA
+SET RSA_PUBLIC_KEY='...';
+```
 
-Streamlit is highly useful for rapid prototyping, internal analytics tools, and business-facing data applications.
+The authentication is performed without using a password.
+
+## Database Objects
+
+* Database: `YOUNESS_STREAMING_LAB`
+* Table: `SIMPLE_DATA`
+
+The project inserts sample sensor-style data into the table.
+
+## Results
+
+* Secure connection established
+* 13 rows inserted successfully
+* Data visible inside Snowflake interface
+
+## Key Learning
+
+This project demonstrates a real enterprise use case involving:
+
+* secure authentication
+* Snowflake administration
+* database permissions
+* Python-to-cloud integration
