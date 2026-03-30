@@ -1,0 +1,8 @@
+{
+    "user": "ZEBRA",
+    "account": "HAB33465",
+    "url": "https://HAB33465.snowflakecomputing.com:443",
+    "private_key_file": "rsa_key.p8",
+    "role": "TRAINING_ROLE",
+    "warehouse": "E_ZEBRA_WH"
+}
