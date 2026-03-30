@@ -53,6 +53,16 @@ The project inserts sample sensor-style data into the table.
 * 13 rows inserted successfully
 * Data visible inside Snowflake interface
 
+## Project Preview
+
+### Snowflake Database and Inserted Data
+
+![Snowflake Table Preview](images/snowflake_table_preview.png)
+
+### SQL Insert Workflow
+
+![Snowflake SQL Workflow](images/snowflake_sql_workflow.png)
+
 ## Key Learning
 
 This project demonstrates a real enterprise use case involving:
